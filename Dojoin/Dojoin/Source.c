@@ -19,7 +19,9 @@ int wmain(int argc, WCHAR *argv[])
 	LPCWSTR accountOU = (LPCWSTR)argv[2];
 	LPCWSTR account = (LPCWSTR)argv[3];
 	LPCWSTR password = (LPCWSTR)argv[4];
-	DWORD joinOptions = NETSETUP_JOIN_DOMAIN | NETSETUP_ACCT_CREATE;
+	DWORD joinOptions = NETSETUP_JOIN_DOMAIN |
+						NETSETUP_DOMAIN_JOIN_IF_JOINED |
+						NETSETUP_ACCT_CREATE;
 
 	// Here we go! 
 	joinDomain = NetJoinDomain(
